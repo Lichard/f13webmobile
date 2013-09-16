@@ -3,6 +3,7 @@
     $db_connection = new mysqli($SERVER, $USER, $PASS, $DB);
     if(mysqli_connect_error()){
         echo "Can't connect!";
+        echo mysqli_connect_error();
         return null;
     }
 
