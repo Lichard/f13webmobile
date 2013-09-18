@@ -3,8 +3,17 @@
     <head>
         <meta charset='utf-8'/>
         <link rel='stylesheet' href="style.css" type="text/css">
+        <script src="../js/jquery.js"></script>
         <title>Richard Li's Homepage</title>
     </head>
+    <script>
+        window.onload = function(){
+            alert("Welcome to Richard's hw2.");
+        }
+        function showForm(){
+            alert("test button");
+        }
+    </script>
     <body>
         <header>
         <h1><a href='index.html'>Richard Li</a></h1>
@@ -14,6 +23,7 @@
             <li><a href='#'>Portfolio</a></li>
         </ul></nav>
         </header>
+        <button type='button' onclick=showForm()>Click to show form</button>
 
         <h1> About Me! </h1>
         <a href='#'><img src="photo.jpg" alt="profile photo" height="320"></a>
@@ -27,7 +37,6 @@
         <a href="www.youtube.com/user/richard4321">Youtube</a><br>
         <br>
 
-        <video id='pianoVid' src='piano.mp4' width="500" controls></video>
         <footer>
         <p>For CS4620 fall 2013. Richard Li yl4tc@virginia.edu<p>
         </footer>
