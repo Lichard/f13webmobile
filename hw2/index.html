@@ -65,19 +65,19 @@
             $('#formButton').click(function (){
                 $('#myForm').show();
                 $('#formButton').html('Thanks for opening the form using jQuery!');
-            });
-            $('#myForm').submit(function(e){
-                e.preventDefault();
-                $('#myForm').hide('explode', {}, 1000);
-                $.ajax({
-                    type:"GET",
-                    url:"hw2.php",
-                    data:$('#myForm').serialize(),
-                    }).done(function(msg){
-                    $('#result').html(msg);
+                $('#myForm').submit(function(e){
+                    e.preventDefault();
+                    $('#myForm').hide('slide', {}, 1000 function(){
+                        $.ajax({
+                            type:"GET",
+                            url:"hw2.php",
+                            data:$('#myForm').serialize(),
+                            }).done(function(msg){
+                            $('#result').html(msg);
+                        });
+                    });
                 });
-            });
-        </script>
-    </body>
+            </script>
+        </body>
 
-</html>
+    </html>
