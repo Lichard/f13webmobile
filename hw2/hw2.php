@@ -1,13 +1,15 @@
 <?php
-    include_once('dblogin.php');
-    $db_connection = new mysqli($SERVER, $USER, $PASS, $DB);
-    if(mysqli_connect_error()){
-        echo "Can't connect!";
-        echo mysqli_connect_error();
-        return null;
-    }
+include_once('dblogin.php');
+$db_connection = new mysqli($SERVER, $USER, $PASS, $DB);
+if(mysqli_connect_error()){
+    echo "Can't connect!";
+    echo mysqli_connect_error();
+    return null;
+}
+echo "connect successful";
 
-    echo "connect successful";
+if($name!=null){
+
     $min = $_GET['min'];
     $max = $_GET['max'];
 
@@ -18,4 +20,5 @@
     if($stmt->prepare()){
 
     }
+}
 ?>
