@@ -9,14 +9,6 @@
 
         <title>Richard Li's Homepage</title>
     </head>
-    <script>
-        window.onload = function(){
-            $('#formButton').button();
-            $('#submitButton').button();
-            alert("Welcome to Richard's hw2.");
-
-        }
-    </script>
     <body>
         <header>
         <h1><a href='index.html'>Richard Li</a></h1>
@@ -26,7 +18,7 @@
             <li><a href='#'>Portfolio</a></li>
         </ul></nav>
         </header>
-        <button type='button' id='formButton')>Click to show form</button>
+        <button type='button' id='formButton' >Click to show form</button>
 
         <form id="myForm" style='display:none'>
             <h3>When is the optimal time to sleep?</h3>
@@ -59,6 +51,12 @@
         </footer>
 
         <script>
+            window.onload = function(){
+                $('#formButton').button();
+                $('#submitButton').button();
+                alert("Welcome to Richard's hw2.");
+
+            }
             $('header').click(function(){
                 $('header').effect("pulsate", "fast");
             });
