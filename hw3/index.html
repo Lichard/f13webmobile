@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <link rel='stylesheet' href="style.css" type="text/css">
+        <link rel='stylesheet' href='../js/jquery/css/black-tie/jquery-ui-1.10.3.custom.css'>
+        <script src="../js/jquery.js"></script>
+        <script src="../js/jquery/js/jquery-ui-1.10.3.custom.js"></script>
+
+        <title>Richard Li's Homepage</title>
+    </head>
+    <body>
+        <header>
+        <h1><a href='index.html'>Richard Li</a></h1>
+        <nav><ul>
+            <li class='active'><a href='#'>About</a></li>
+            <li><a href='#'>Blog</a></li>
+            <li><a href='#'>Portfolio</a></li>
+        </ul></nav>
+        </header>
+
+        <div id='myForm'>
+            <form id="commentForm">
+                <h3>Post a comment!</h3>
+                <label for='name'>Name: </label>
+                <input name='name' type='text' id='name'><br>
+                <label for="comment">Comment: </label><br>
+                <textarea rows='4' cols='50' name='comment' id='comment'></textarea>
+                <br>
+                <button type='submit' id='submitCommentButton'>Post</button>
+            </form><br>
+            <form id="userForm">
+                <h3>Create or update a profile</h3>
+                <label for='updateName'>Name: </label>
+                <input name='updateName' id="updateName" type="text"><br>
+                <label for="updateAge">Age: </label>
+                <input name='updateAge' type='number' id='updateAge'>
+                <label for="updateInfo">Info: </label>
+                <input name='updateInfo' type='text' id='updateInfo'>
+                <br>
+                <button type='submit' id='submitUpdateButton'>Update</button>
+            </form><br>
+            <form id='viewCommentForm'>
+                <button type='submit' id='viewCommentButton'>View Comments</button>
+            </form>
+        </div>
+        <div id='result'>
+        </div>
+
+
+
+        <h1> About Me! </h1>
+        <a href='#'><img src="photo.jpg" alt="profile photo" height="320"></a>
+        <h2> Richard Li </h2>
+        <p> I am a fourth year Computer Science student at the University of Virginia.<br>
+        My interests include graphics, security, music, and photography<p>
+        <p> Contact me at: <p>
+        <a href="mailto:ryli721@#gmail.com">Gmail</a><br>
+        <a href="https://www.facebook.com/richard.li.31">Facebook</a><br>
+        <a href="https://twitter.com/RichyLi">Twitter</a><br>
+        <a href="www.youtube.com/user/richard4321">Youtube</a><br>
+        <br>
+
+        <footer>
+        <p>For CS4620 fall 2013. Richard Li yl4tc@virginia.edu<p>
+        </footer>
+
+        <script>
+            window.onload = function(){
+                $('button').button();
+            }
+            $('header').click(function(){
+                $('header').effect("pulsate", "fast");
+            });
+            $('#commentForm').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    type:"GET",
+                    url:"hw3.php",
+                    data:"type=commentForm&" + $('#commentForm').serialize(),
+                    }).done(function(msg){
+                    $('#result').html(msg);
+                });
+            });
+            $('#userForm').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    type:"GET",
+                    url:"hw3.php",
+                    data:"type=commentForm&" + $('#userForm').serialize(),
+                    }).done(function(msg){
+                    $('#result').html(msg);
+                });
+            });
+            $('#viewCommentForm').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    type:"GET",
+                    url:"hw3.php",
+                    data:"type=commentForm&" + $('#viewCommentForm').serialize(),
+                    }).done(function(msg){
+                    $('#result').html(msg);
+                });
+            });
+        </script>
+    </body>
+</html>
