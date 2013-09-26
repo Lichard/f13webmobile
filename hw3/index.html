@@ -87,7 +87,7 @@
                 $.ajax({
                     type:"GET",
                     url:"hw3.php",
-                    data:"type=commentForm&" + $('#userForm').serialize(),
+                    data:"type=userForm&" + $('#userForm').serialize(),
                     }).done(function(msg){
                     $('#result').html(msg);
                 });
@@ -97,7 +97,7 @@
                 $.ajax({
                     type:"GET",
                     url:"hw3.php",
-                    data:"type=commentForm&" + $('#viewCommentForm').serialize(),
+                    data:"type=viewCommentForm&" + $('#viewCommentForm').serialize(),
                     }).done(function(msg){
                     $('#result').html(msg);
                 });
