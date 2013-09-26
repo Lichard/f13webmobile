@@ -6,27 +6,27 @@ if(mysqli_connect_error()){
     echo mysqli_connect_error();
     return null;
 }
-    $type=$_GET['type'];
-if($type=='commentForm'){
-    $name = $_GET['name'];
-    $comment = $_GET['comment'];
-    $time = date();
-    echo $name . " " . $comment . " " . $time;
+$type = (isset($_GET['type']) ? $_GET['type'] : null);
+if($type!=null){
+    if($type=='commentForm'){
+        $name = $_GET['name'];
+        $comment = $_GET['comment'];
+        $time = time();
+        
 
-    $stmt = $dbconnection->stmt_init();
 
-    if($stmt->prepare('select deptID, courseNum, from section where seatsTaken >= ? and asdfasdfasdf')){
 
-        $stmt->bind_param("ss", $min, $max);
+        echo 'Comment posted! '  . $name . " commented: '" . $comment;
+    }
+    if($type=='userForm'){
+        $name = $_GET['updateName'];
+        $age = $_GET['updateAge'];
+        $info = $_GET['info'];
+        echo 'Successfully updated info for' . $name . "!";
+    }
+    if($type=='viewCommentForm'){
 
-        stmt->execute();
-
-        stmt->bind_result($...........);
-
-        while($stmt->fetch())
-            echo $deptID . "" . $coursenum . "";
-        }
-
+        echo $name . " " . $comment . " " . $time;
     }
 }
 ?>
